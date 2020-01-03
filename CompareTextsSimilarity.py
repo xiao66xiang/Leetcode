@@ -18,6 +18,8 @@ def getSimilarity():
     for word in word_count1:
         intersect += min(word_count1[word], word_count2[word])
         union += max(word_count1[word], word_count2[word])
+    if union == 0:
+        return 0
     return str(float(intersect) / union)
 
 
